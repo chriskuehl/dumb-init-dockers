@@ -1,12 +1,12 @@
 # Template for Debian-based OSes
-FROM {source}
+FROM debian:jessie
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
         ca-certificates \
         curl \
     && curl -sLo /tmp/dumb-init.deb \
-		https://github.com/Yelp/dumb-init/releases/download/v{version}/dumb-init_{version}_amd64.deb \
+		https://github.com/Yelp/dumb-init/releases/download/v0.0.1/dumb-init_0.0.1_amd64.deb \
 	&& dpkg -i /tmp/dumb-init.deb \
 	&& rm /tmp/dumb-init.deb \
 	&& apt-get clean
