@@ -59,11 +59,6 @@ def main():
         # latest version
         build_debian(debian_tag, debian, versions[0])
 
-        # version tags
-        for version in versions:
-            tag = '{}-{}'.format(debian_tag, version)
-            build_debian(tag, debian, version)
-
 
 if __name__ == '__main__':
     sys.exit(main())
